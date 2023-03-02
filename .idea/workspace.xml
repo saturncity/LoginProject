@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3edbcfad-d0da-48cc-899d-772a16d9e686" name="Changes" comment="Initial Commit&#10;- Register Setup&#10;- Basic Page Navigation&#10;- User Setup&#10;- Login, Register Page Setups">
+    <list default="true" id="3edbcfad-d0da-48cc-899d-772a16d9e686" name="Changes" comment="Significant reformatting">
+      <change afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/database/ReservationDatabase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/Reservation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/ReservationPage.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/objects/ReservationEvent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/Navigator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/Navigator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/UserDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/UserDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dependencies/mysql-connector-j-8.0.32.jar" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mysql-connector-j-8.0.32.jar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,32 +26,39 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2MGTF3e6gjM4g5rwoqWxPBa3Quv" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources" />
+      <recent name="$PROJECT_DIR$/src/main/java/lenzj/dev/GUI" />
+      <recent name="$PROJECT_DIR$/src/Dependencies" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
@@ -60,7 +68,7 @@
       <module name="LoginProjectV2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="lenzj.dev.*" />
+          <option name="PATTERN" value="lenzj.dev.database.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -87,7 +95,9 @@
       <workItem from="1677454560437" duration="103000" />
       <workItem from="1677470894475" duration="458000" />
       <workItem from="1677552443699" duration="4854000" />
-      <workItem from="1677709598458" duration="5636000" />
+      <workItem from="1677709598458" duration="6965000" />
+      <workItem from="1677721164874" duration="10350000" />
+      <workItem from="1677798453771" duration="497000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit&#10;- Register Setup&#10;- Basic Page Navigation&#10;- User Setup&#10;- Login, Register Page Setups">
       <created>1677553539083</created>
@@ -96,7 +106,28 @@
       <option name="project" value="LOCAL" />
       <updated>1677553539083</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Initial Commit&#10;- Register Setup&#10;- Basic Page Navigation&#10;- User Setup&#10;- Login, Register Page Setups">
+      <created>1677719896543</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1677719896543</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Finalize Login.java">
+      <created>1677721722398</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1677721722398</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Significant reformatting">
+      <created>1677759699329</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1677759699329</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -115,6 +146,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit&#10;- Register Setup&#10;- Basic Page Navigation&#10;- User Setup&#10;- Login, Register Page Setups" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit&#10;- Register Setup&#10;- Basic Page Navigation&#10;- User Setup&#10;- Login, Register Page Setups" />
+    <MESSAGE value="Initial Commit" />
+    <MESSAGE value="Finalize Login.java" />
+    <MESSAGE value="Reformation" />
+    <MESSAGE value="Significant reformatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Significant reformatting" />
   </component>
 </project>
