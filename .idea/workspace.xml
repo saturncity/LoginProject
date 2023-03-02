@@ -4,23 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3edbcfad-d0da-48cc-899d-772a16d9e686" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/Home.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/HomePage.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/Login.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/LoginPage.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/Navigator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/Register.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/RegisterPage.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/UserDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/mysql-connector-j-8.0.32.jar" afterDir="false" />
+    <list default="true" id="3edbcfad-d0da-48cc-899d-772a16d9e686" name="Changes" comment="Initial Commit&#10;- Register Setup&#10;- Basic Page Navigation&#10;- User Setup&#10;- Login, Register Page Setups">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/Navigator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/Navigator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/UserDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/UserDatabase.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,9 +44,9 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -97,8 +86,17 @@
       <workItem from="1677394114729" duration="11360000" />
       <workItem from="1677454560437" duration="103000" />
       <workItem from="1677470894475" duration="458000" />
-      <workItem from="1677552443699" duration="927000" />
+      <workItem from="1677552443699" duration="4854000" />
+      <workItem from="1677709598458" duration="5636000" />
     </task>
+    <task id="LOCAL-00001" summary="Initial Commit&#10;- Register Setup&#10;- Basic Page Navigation&#10;- User Setup&#10;- Login, Register Page Setups">
+      <created>1677553539083</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1677553539083</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -114,5 +112,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial Commit&#10;- Register Setup&#10;- Basic Page Navigation&#10;- User Setup&#10;- Login, Register Page Setups" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit&#10;- Register Setup&#10;- Basic Page Navigation&#10;- User Setup&#10;- Login, Register Page Setups" />
   </component>
 </project>

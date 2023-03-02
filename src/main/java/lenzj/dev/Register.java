@@ -37,8 +37,10 @@ public class Register {
     private JLabel phoneLabel;
     private JLabel passwordLabel;
     private JLabel confirmPasswordLabel;
+    Navigator navigator;
 
     public Register(Navigator navigator) {
+        this.navigator = navigator;
 
         returnButton.addActionListener(new ActionListener() {
             @Override
@@ -96,13 +98,14 @@ public class Register {
                 String password = new String(passwordField.getPassword());
 
                 // create user
-                navigator.user = new User(username, email, phone, password);
+                navigator.database.addUser(new User(username, email, phone, password));
 
                 // show home panel
                 navigator.setActivePanel(navigator.home.parentPanel);
             }
         });
     }
+
     public void checkConditions() {
         String username = usernameField.getText();
         String email = emailField.getText();
@@ -112,13 +115,13 @@ public class Register {
 
         // TODO: implement checks
         // check if username is taken
-        boolean userNotTaken = true;
+        boolean userNotTaken = !this.navigator.database.usernameTaken(username);
 
         // check if email is taken
-        boolean emailNotTaken = true;
+        boolean emailNotTaken = !this.navigator.database.emailTaken(email);
 
         // check if phone is taken
-        boolean phoneNotTaken = true;
+        boolean phoneNotTaken = !this.navigator.database.phoneTaken(phone);
 
         // check if password is long enough
         boolean totalCharacters = password.length() >= 8;

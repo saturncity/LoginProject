@@ -13,7 +13,7 @@ public class Navigator {
     public Navigator() {
         // start with login panel
         setActivePanel(login.parentPanel);
-
+        database.debugPrint();
     }
 
     public JPanel getActivePanel() {
