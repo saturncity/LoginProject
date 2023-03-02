@@ -1,13 +1,15 @@
-package lenzj.dev;
+package lenzj.dev.gui;
+
+import lenzj.dev.Session;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Login {
-    JPanel parentPanel;
-    JPasswordField passwordField;
-    JTextField usernameField;
+    private JPanel parentPanel;
+    private JPasswordField passwordField;
+    private JTextField usernameField;
     private JButton logInButton;
     private JButton registerButton;
     private JLabel headerLabel;
@@ -22,19 +24,19 @@ public class Login {
     private JPanel textFieldPanel;
     private JPanel usernamePanel;
 
-    public Login(Navigator navigator) {
+    public Login(Session session) {
         /* when clicked, check if login details are valid or show reason why wrong */
         // event listener for when the login button is pushed
         logInButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // if login details match
-                if (navigator.database.checkUser(usernameField.getText(), passwordField.getText())) {
-                    // set user in the navigator's field
-                    navigator.user = navigator.database.getUser(usernameField.getText());
+                if (session.getDatabase().checkUser(usernameField.getText(), passwordField.getText())) {
+                    // set user in the session using method
+                    session.setUser(session.getDatabase().getUser(usernameField.getText()));
 
-                    // show home panel using the navigator's method
-                    navigator.setActivePanel(navigator.home.parentPanel);
+                    // show home panel using the session's method
+                    session.setActivePanel(session.getHome().getParentPanel());
                 } else {
                     // show correct error message using JOptionPane
                     // first, check if fields are filled out
@@ -42,7 +44,7 @@ public class Login {
                         JOptionPane.showMessageDialog(null, "Please fill out all fields.");
                     } else {
                         // then, check if user exists, if it does then incorrect password otherwise user never existed
-                        if (navigator.database.checkUser(usernameField.getText())) {
+                        if (session.getDatabase().checkUser(usernameField.getText())) {
                             JOptionPane.showMessageDialog(null, "Incorrect password.");
                         } else {
                             JOptionPane.showMessageDialog(null, "User does not exist.");
@@ -51,20 +53,32 @@ public class Login {
                 }
             }
         });
-        
+
         /* when clicked, transfer information from the login username field to the register login field (QoL)*/
         // event listener for when the register button is pushed
         registerButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // write username & password from login to register
-                navigator.register.usernameField.setText(usernameField.getText());
-                navigator.register.passwordField.setText(passwordField.getText());
+                session.getRegister().getUsernameField().setText(usernameField.getText());
+                session.getRegister().getPasswordField().setText(passwordField.getText());
 
                 // show register panel & check conditions again
-                navigator.setActivePanel(navigator.register.parentPanel);
-                navigator.register.checkConditions();
+                session.setActivePanel(session.register.getParentPanel());
+                session.getRegister().checkConditions(session.database);
             }
         });
+    }
+
+    public JPanel getParentPanel() {
+        return parentPanel;
+    }
+
+    public JPasswordField getPasswordField() {
+        return passwordField;
+    }
+
+    public JTextField getUsernameField() {
+        return usernameField;
     }
 }

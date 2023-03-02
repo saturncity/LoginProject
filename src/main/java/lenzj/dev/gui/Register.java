@@ -1,56 +1,59 @@
-package lenzj.dev;
+package lenzj.dev.gui;
+
+import lenzj.dev.objects.User;
+import lenzj.dev.database.UserDatabase;
+import lenzj.dev.Session;
 
 import javax.swing.*;
 import java.awt.event.*;
 
 public class Register {
-    JPanel parentPanel;
-    private JPanel headerPanel;
-    private JPanel footerPanel;
-    private JPanel primaryPanel;
-    private JPanel centerPanel;
-    private JLabel headerLabel;
+    private JPanel parentPanel;
+    private JPasswordField passwordField;
+    private JTextField usernameField;
+    private JButton registerButton;
+    private JButton returnButton;
+    private JCheckBox captialsCheckBox;
+    private JCheckBox emailIsnTTakenCheckBox;
+    private JCheckBox lowercasesCheckBox;
+    private JCheckBox numbersCheckBox;
+    private JCheckBox passwordsMatchCheckBox;
+    private JCheckBox phoneIsnTTakenCheckBox;
+    private JCheckBox symbolsCheckBox;
+    private JCheckBox totalCharactersCheckBox;
+    private JCheckBox userIsnTTakenCheckBox;
+    private JLabel confirmPasswordLabel;
+    private JLabel creationConditionsLabel;
+    private JLabel emailLabel;
     private JLabel footerLabel;
+    private JLabel headerLabel;
+    private JLabel passwordLabel;
+    private JLabel phoneLabel;
+    private JLabel usernameLabel;
+    private JPanel buttonPanel;
+    private JPanel centerPanel;
+    private JPanel conditionPanel;
+    private JPanel footerPanel;
+    private JPanel headerPanel;
+    private JPanel offsetPanel;
+    private JPanel primaryPanel;
     private JPanel textFieldPanel;
-    JTextField usernameField;
+    private JPasswordField confirmPasswordField;
     private JTextField emailField;
     private JTextField phoneField;
-    JPasswordField passwordField;
-    private JPanel buttonPanel;
-    private JButton registerButton;
-    private JPasswordField confirmPasswordField;
-    private JButton returnButton;
-    private JPanel offsetPanel;
-    private JPanel conditionPanel;
-    private JCheckBox totalCharactersCheckBox;
-    private JCheckBox numbersCheckBox;
-    private JCheckBox captialsCheckBox;
-    private JCheckBox lowercasesCheckBox;
-    private JCheckBox symbolsCheckBox;
-    private JCheckBox passwordsMatchCheckBox;
-    private JLabel creationConditionsLabel;
-    private JCheckBox phoneIsnTTakenCheckBox;
-    private JCheckBox emailIsnTTakenCheckBox;
-    private JCheckBox userIsnTTakenCheckBox;
-    private JLabel usernameLabel;
-    private JLabel emailLabel;
-    private JLabel phoneLabel;
-    private JLabel passwordLabel;
-    private JLabel confirmPasswordLabel;
-    Navigator navigator;
 
-    public Register(Navigator navigator) {
-        this.navigator = navigator;
-
+    public Register(Session session) {
+        /* when clicked, transfer information from fields and change panel */
+        // event listener for when the return button is pushed
         returnButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // write username & password from register to login
-                navigator.login.usernameField.setText(usernameField.getText());
-                navigator.login.passwordField.setText(passwordField.getText());
+                session.getLogin().getUsernameField().setText(usernameField.getText());
+                session.getLogin().getPasswordField().setText(passwordField.getText());
 
                 // show login panel
-                navigator.setActivePanel(navigator.login.parentPanel);
+                session.setActivePanel(session.getLogin().getParentPanel());
             }
         });
 
@@ -58,35 +61,35 @@ public class Register {
             @Override
             public void keyReleased(KeyEvent e) {
                 super.keyReleased(e);
-                checkConditions();
+                checkConditions(session.getDatabase());
             }
         });
         confirmPasswordField.addKeyListener(new KeyAdapter() {
             @Override
             public void keyReleased(KeyEvent e) {
                 super.keyReleased(e);
-                checkConditions();
+                checkConditions(session.getDatabase());
             }
         });
         phoneField.addKeyListener(new KeyAdapter() {
             @Override
             public void keyReleased(KeyEvent e) {
                 super.keyReleased(e);
-                checkConditions();
+                checkConditions(session.getDatabase());
             }
         });
         emailField.addKeyListener(new KeyAdapter() {
             @Override
             public void keyReleased(KeyEvent e) {
                 super.keyReleased(e);
-                checkConditions();
+                checkConditions(session.getDatabase());
             }
         });
         usernameField.addKeyListener(new KeyAdapter() {
             @Override
             public void keyReleased(KeyEvent e) {
                 super.keyReleased(e);
-                checkConditions();
+                checkConditions(session.getDatabase());
             }
         });
         registerButton.addActionListener(new ActionListener() {
@@ -98,30 +101,31 @@ public class Register {
                 String password = new String(passwordField.getPassword());
 
                 // create user
-                navigator.database.addUser(new User(username, email, phone, password));
+                session.getDatabase().addUser(new User(username, email, phone, password));
 
                 // show home panel
-                navigator.setActivePanel(navigator.home.parentPanel);
+                session.setActivePanel(session.getHome().getParentPanel());
             }
         });
     }
 
-    public void checkConditions() {
+    public void checkConditions(UserDatabase database) {
+        /* check information from fields, and set checkboxes accordingly, also user to create when valid */
+        // get text from fields
         String username = usernameField.getText();
         String email = emailField.getText();
         String phone = phoneField.getText();
         String password = new String(passwordField.getPassword());
         String confirmPassword = new String(confirmPasswordField.getPassword());
 
-        // TODO: implement checks
         // check if username is taken
-        boolean userNotTaken = !this.navigator.database.usernameTaken(username);
+        boolean userNotTaken = !database.usernameTaken(username);
 
         // check if email is taken
-        boolean emailNotTaken = !this.navigator.database.emailTaken(email);
+        boolean emailNotTaken = !database.emailTaken(email);
 
         // check if phone is taken
-        boolean phoneNotTaken = !this.navigator.database.phoneTaken(phone);
+        boolean phoneNotTaken = !database.phoneTaken(phone);
 
         // check if password is long enough
         boolean totalCharacters = password.length() >= 8;
@@ -163,5 +167,17 @@ public class Register {
         } else {
             registerButton.setEnabled(false);
         }
+    }
+
+    public JPanel getParentPanel() {
+        return parentPanel;
+    }
+
+    public JPasswordField getPasswordField() {
+        return passwordField;
+    }
+
+    public JTextField getUsernameField() {
+        return usernameField;
     }
 }

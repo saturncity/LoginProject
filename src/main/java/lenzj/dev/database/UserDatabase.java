@@ -1,4 +1,6 @@
-package lenzj.dev;
+package lenzj.dev.database;
+
+import lenzj.dev.objects.User;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -99,12 +101,6 @@ public class UserDatabase {
             }
         }
         return false;
-    }
-
-    public void debugPrint() {
-        for (User user : userList) {
-            System.out.println(user.getUsername() + " | " + user.getEmail() + " | " + user.getPhone() + " | " + user.getPassword());
-        }
     }
 
     public boolean usernameTaken(String username) {
