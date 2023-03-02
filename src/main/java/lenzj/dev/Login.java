@@ -30,7 +30,7 @@ public class Login {
             public void actionPerformed(ActionEvent e) {
                 // if login details match
                 if (navigator.database.checkUser(usernameField.getText(), passwordField.getText())) {
-                    // set user in the naviator's field
+                    // set user in the navigator's field
                     navigator.user = navigator.database.getUser(usernameField.getText());
 
                     // show home panel using the navigator's method
