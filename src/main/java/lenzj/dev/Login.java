@@ -23,22 +23,26 @@ public class Login {
     private JPanel usernamePanel;
 
     public Login(Navigator navigator) {
-
+        
+        /* when clicked, check if login details are valid or show reason why wrong */
         // event listener for when the login button is pushed
         logInButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                // if login details match
                 if (navigator.database.checkUser(usernameField.getText(), passwordField.getText())) {
-                    // set user
+                    // set user in the naviator's field
                     navigator.user = navigator.database.getUser(usernameField.getText());
 
-                    // show home panel
+                    // show home panel using the navigator's method
                     navigator.setActivePanel(navigator.home.parentPanel);
                 } else {
-                    // show correct error message
+                    // show correct error message using JOptionPane
+                    // first, check if fields are filled out
                     if (usernameField.getText().equals("") || passwordField.getText().equals("")) {
                         JOptionPane.showMessageDialog(null, "Please fill out all fields.");
                     } else {
+                        // then, check if user exists, if it does then incorrect password otherwise user never existed
                         if (navigator.database.checkUser(usernameField.getText())) {
                             JOptionPane.showMessageDialog(null, "Incorrect password.");
                         } else {
@@ -48,7 +52,8 @@ public class Login {
                 }
             }
         });
-
+        
+        /* when clicked, transfer information from the login username field to the register login field (QoL)*/
         // event listener for when the register button is pushed
         registerButton.addActionListener(new ActionListener() {
             @Override
