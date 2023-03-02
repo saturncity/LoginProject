@@ -23,7 +23,6 @@ public class Login {
     private JPanel usernamePanel;
 
     public Login(Navigator navigator) {
-        
         /* when clicked, check if login details are valid or show reason why wrong */
         // event listener for when the login button is pushed
         logInButton.addActionListener(new ActionListener() {
