@@ -23,18 +23,8 @@ public class Login {
     private JPanel usernamePanel;
 
     public Login(Navigator navigator) {
-        registerButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                // write username & password from login to register
-                navigator.register.usernameField.setText(usernameField.getText());
-                navigator.register.passwordField.setText(passwordField.getText());
 
-                // show register panel & check conditions again
-                navigator.setActivePanel(navigator.register.parentPanel);
-                navigator.register.checkConditions();
-            }
-        });
+        // event listener for when the login button is pushed
         logInButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -56,6 +46,20 @@ public class Login {
                         }
                     }
                 }
+            }
+        });
+
+        // event listener for when the register button is pushed
+        registerButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // write username & password from login to register
+                navigator.register.usernameField.setText(usernameField.getText());
+                navigator.register.passwordField.setText(passwordField.getText());
+
+                // show register panel & check conditions again
+                navigator.setActivePanel(navigator.register.parentPanel);
+                navigator.register.checkConditions();
             }
         });
     }
