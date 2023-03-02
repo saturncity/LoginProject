@@ -6,21 +6,21 @@ import java.awt.event.ActionListener;
 
 public class Login {
     JPanel parentPanel;
-    private JPanel headerPanel;
-    private JPanel footerPanel;
-    private JPanel primaryPanel;
-    private JLabel headerLabel;
-    private JPanel centerPanel;
-    private JPanel textFieldPanel;
-    JTextField usernameField;
-    private JPanel usernamePanel;
-    private JPanel passwordPanel;
     JPasswordField passwordField;
-    private JLabel usernameLabel;
-    private JLabel passwordLabel;
-    private JPanel buttonPanel;
+    JTextField usernameField;
     private JButton logInButton;
     private JButton registerButton;
+    private JLabel headerLabel;
+    private JLabel passwordLabel;
+    private JLabel usernameLabel;
+    private JPanel buttonPanel;
+    private JPanel centerPanel;
+    private JPanel footerPanel;
+    private JPanel headerPanel;
+    private JPanel passwordPanel;
+    private JPanel primaryPanel;
+    private JPanel textFieldPanel;
+    private JPanel usernamePanel;
 
     public Login(Navigator navigator) {
         registerButton.addActionListener(new ActionListener() {
