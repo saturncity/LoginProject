@@ -4,26 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3edbcfad-d0da-48cc-899d-772a16d9e686" name="Changes" comment="Forgot system">
-      <change afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/reservationpages/Reservation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/reservationpages/ReservationPage.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/reservationpages/Table.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/jcalendar-1.4.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/jgoodies-common-1.2.0.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/jgoodies-looks-2.4.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/junit-4.6.jar" afterDir="false" />
+    <list default="true" id="3edbcfad-d0da-48cc-899d-772a16d9e686" name="Changes" comment="fucking finished the project">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/Session.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/database/ReservationDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/database/ReservationDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/database/UserDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/database/UserDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/Home.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/Home.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/HomePage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/HomePage.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/Register.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/Reservation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/ReservationPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/reservationpages/Table.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/forgotpages/ForgotUsername.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/forgotpages/ForgotUsername.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/objects/ReservationEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/objects/ReservationEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/reservationpages/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/reservationpages/Reservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/reservationpages/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/reservationpages/Table.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +104,7 @@
       <workItem from="1677721164874" duration="10350000" />
       <workItem from="1677798453771" duration="1997000" />
       <workItem from="1677822633362" duration="882000" />
-      <workItem from="1677981656935" duration="22526000" />
+      <workItem from="1677981656935" duration="24238000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit&#10;- Register Setup&#10;- Basic Page Navigation&#10;- User Setup&#10;- Login, Register Page Setups">
       <created>1677553539083</created>
@@ -161,7 +148,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678024162717</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="fucking finished the project">
+      <created>1678036542387</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1678036542387</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -186,6 +180,7 @@
     <MESSAGE value="Significant reformatting" />
     <MESSAGE value="More significant reformatting + new classes" />
     <MESSAGE value="Forgot system" />
-    <option name="LAST_COMMIT_MESSAGE" value="Forgot system" />
+    <MESSAGE value="fucking finished the project" />
+    <option name="LAST_COMMIT_MESSAGE" value="fucking finished the project" />
   </component>
 </project>

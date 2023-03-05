@@ -179,4 +179,18 @@ public class UserDatabase {
             }
         }
     }
+
+    public void debugPrint() {
+        System.out.println(
+                "██╗   ██╗███████╗███████╗██████╗ ███████╗\n" +
+                "██║   ██║██╔════╝██╔════╝██╔══██╗██╔════╝\n" +
+                "██║   ██║███████╗█████╗  ██████╔╝███████╗\n" +
+                "██║   ██║╚════██║██╔══╝  ██╔══██╗╚════██║\n" +
+                "╚██████╔╝███████║███████╗██║  ██║███████║\n" +
+                " ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝╚══════╝");
+        for (User user : userList) {
+            System.out.println("USERNAME: " + user.getUsername() + " | EMAIL: " + user.getEmail() + " | PHONE: " + user.getPhone() + " | PASSWORD: " + user.getPassword());
+        }
+    }
+
 }

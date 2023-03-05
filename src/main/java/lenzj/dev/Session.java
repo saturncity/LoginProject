@@ -43,6 +43,8 @@ public class Session {
         frame.setVisible(true);
 
         setActivePanel(login.getParentPanel());
+        database.debugPrint();
+        reservationDatabase.debugPrint();
     }
 
     public JPanel getActivePanel() {

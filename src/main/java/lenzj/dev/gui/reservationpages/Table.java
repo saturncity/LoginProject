@@ -108,6 +108,22 @@ public class Table {
                 } else {
                     ReservationEvent reservation = new ReservationEvent(name, phone, date, table);
                     session.getReservationDatabase().addReservation(reservation);
+
+                    // clear fields in both panels
+                    nameField.setText("");
+                    phoneField.setText("");
+
+                    session.getReservation().getNameField().setText("");
+                    session.getReservation().getPhoneField().setText("");
+
+                    dateDynamicLabel.setText("No date selected");
+                    tableDynamicLabel.setText("No table selected");
+
+                    session.getReservation().getDateChooser().setDate(null);
+
+                    errorLabel.setText(" ");
+
+                    session.setActivePanel(session.getReservation().getParentPanel());
                 }
             }
         });

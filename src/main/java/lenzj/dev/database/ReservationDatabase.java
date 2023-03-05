@@ -2,6 +2,7 @@ package lenzj.dev.database;
 
 import lenzj.dev.objects.ReservationEvent;
 
+import javax.swing.*;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -69,5 +70,25 @@ public class ReservationDatabase {
 
     }
 
+    public void debugPrint() {
+        System.out.println(
+                "██████╗ ███████╗███████╗███████╗██████╗ ██╗   ██╗ █████╗ ████████╗██╗ ██████╗ ███╗   ██╗███████╗\n" +
+                "██╔══██╗██╔════╝██╔════╝██╔════╝██╔══██╗██║   ██║██╔══██╗╚══██╔══╝██║██╔═══██╗████╗  ██║██╔════╝\n" +
+                "██████╔╝█████╗  ███████╗█████╗  ██████╔╝██║   ██║███████║   ██║   ██║██║   ██║██╔██╗ ██║███████╗\n" +
+                "██╔══██╗██╔══╝  ╚════██║██╔══╝  ██╔══██╗╚██╗ ██╔╝██╔══██║   ██║   ██║██║   ██║██║╚██╗██║╚════██║\n" +
+                "██║  ██║███████╗███████║███████╗██║  ██║ ╚████╔╝ ██║  ██║   ██║   ██║╚██████╔╝██║ ╚████║███████║\n" +
+                "╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝╚═╝  ╚═╝  ╚═══╝  ╚═╝  ╚═╝   ╚═╝   ╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚══════╝");
+        for (ReservationEvent reservation : reservationList) {
+            System.out.println("NAME: " + reservation.getName() + " | PHONE: " + reservation.getPhone() + " | DATE: " + reservation.getDate() + " | TABLE: " + reservation.getTable());
+        }
+    }
 
+    public ReservationEvent getReservation(String table, String date) {
+        for (ReservationEvent reservation : reservationList) {
+            if (reservation.getTable().equals(table) && reservation.getDate().equals(date)) {
+                return reservation;
+            }
+        }
+        return null;
+    }
 }
