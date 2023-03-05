@@ -3,8 +3,11 @@ package lenzj.dev.gui;
 import lenzj.dev.Session;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.font.TextAttribute;
+import java.util.Map;
 
 public class Login {
     private JPanel parentPanel;
@@ -23,8 +26,15 @@ public class Login {
     private JPanel primaryPanel;
     private JPanel textFieldPanel;
     private JPanel usernamePanel;
+    private JLabel footerLabel;
+    private JPanel forgotPanel;
+    private JLabel forgotUsernameHLabel;
+    private JLabel forgotPasswordHLabel;
+    private JLabel errorLabel;
+    private Session session;
 
     public Login(Session session) {
+        this.session = session;
         /* when clicked, check if login details are valid or show reason why wrong */
         // event listener for when the login button is pushed
         logInButton.addActionListener(new ActionListener() {
@@ -41,13 +51,13 @@ public class Login {
                     // show correct error message using JOptionPane
                     // first, check if fields are filled out
                     if (usernameField.getText().equals("") || passwordField.getText().equals("")) {
-                        JOptionPane.showMessageDialog(null, "Please fill out all fields.");
+                        errorLabel.setText("Please fill out all fields.");
                     } else {
                         // then, check if user exists, if it does then incorrect password otherwise user never existed
                         if (session.getDatabase().checkUser(usernameField.getText())) {
-                            JOptionPane.showMessageDialog(null, "Incorrect password.");
+                            errorLabel.setText("Incorrect password.");
                         } else {
-                            JOptionPane.showMessageDialog(null, "User does not exist.");
+                            errorLabel.setText("User does not exist.");
                         }
                     }
                 }
@@ -80,5 +90,42 @@ public class Login {
 
     public JTextField getUsernameField() {
         return usernameField;
+    }
+
+    private void createUIComponents() {
+        final Color linkColor = new Color(6,69,173);
+
+        forgotUsernameHLabel = new JLabel("Forgot Username?");
+        forgotPasswordHLabel = new JLabel("Forgot Password?");
+
+        forgotUsernameHLabel.setForeground(linkColor);
+        forgotPasswordHLabel.setForeground(linkColor);
+
+        Font font = forgotUsernameHLabel.getFont();
+        Map attributes = font.getAttributes();
+        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
+        forgotUsernameHLabel.setFont(font.deriveFont(attributes));
+        forgotPasswordHLabel.setFont(font.deriveFont(attributes));
+
+        forgotUsernameHLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        forgotPasswordHLabel.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+
+        forgotUsernameHLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                session.setActivePanel(session.getForgotUsername().getParentPanel());
+            }
+        });
+
+        forgotPasswordHLabel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                session.getForgotPassword().getUsernameField().setText(usernameField.getText());
+                session.setActivePanel(session.getForgotPassword().getParentPanel());
+            }
+        });
+
+        errorLabel = new JLabel();
+        errorLabel.setText(" ");
+        errorLabel.setForeground(Color.RED);
+
     }
 }

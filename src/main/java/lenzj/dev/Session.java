@@ -3,23 +3,39 @@ package lenzj.dev;
 import lenzj.dev.gui.Home;
 import lenzj.dev.gui.Login;
 import lenzj.dev.gui.Register;
+import lenzj.dev.gui.forgotpages.ChangePassword;
+import lenzj.dev.gui.forgotpages.ForgotPassword;
+import lenzj.dev.gui.forgotpages.ForgotUsername;
+import lenzj.dev.gui.forgotpages.UserVerification;
 import lenzj.dev.objects.User;
 import lenzj.dev.database.UserDatabase;
 
+
 import javax.swing.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.awt.*;
 
 public class Session {
     public JPanel activePanel;
     public Login login = new Login(this);
     public Register register = new Register(this);
     public Home home = new Home(this);
+    public ForgotPassword forgotPassword = new ForgotPassword(this);
+    public ForgotUsername forgotUsername = new ForgotUsername(this);
+    public UserVerification userVerification = new UserVerification(this);
+    public ChangePassword changePassword = new ChangePassword(this);
     public JFrame frame = new JFrame();
     public User user;
     public UserDatabase database = new UserDatabase();
     public Session() {
-        // start with login panel
+
+        frame.setContentPane(login.getParentPanel());
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        GraphicsEnvironment graphics = GraphicsEnvironment.getLocalGraphicsEnvironment();
+        GraphicsDevice device = graphics.getDefaultScreenDevice();
+        device.setFullScreenWindow(frame);
+        frame.setVisible(true);
+
         setActivePanel(login.getParentPanel());
     }
 
@@ -27,13 +43,10 @@ public class Session {
         return activePanel;
     }
 
-    public void setActivePanel(JPanel activePanel) {
-        this.activePanel = activePanel;
+    public void setActivePanel(JPanel panel) {
+        activePanel = panel;
         frame.setContentPane(activePanel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setSize(1024, 768);
-        frame.setVisible(true);
+        frame.revalidate();
     }
 
     public User getUser() {
@@ -62,5 +75,21 @@ public class Session {
 
     public JFrame getFrame() {
         return frame;
+    }
+
+    public ForgotPassword getForgotPassword() {
+        return forgotPassword;
+    }
+
+    public ForgotUsername getForgotUsername() {
+        return forgotUsername;
+    }
+
+    public UserVerification getUserVerification() {
+        return userVerification;
+    }
+
+    public ChangePassword getChangePassword() {
+        return changePassword;
     }
 }

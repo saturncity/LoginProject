@@ -129,4 +129,55 @@ public class UserDatabase {
         }
         return false;
     }
+
+    public void updatePassword(String username, String password) {
+        for (User user : userList) {
+            if (user.getUsername().equals(username)) {
+                try {
+                    String sql = "UPDATE users SET password = ? WHERE username = ?";
+                    PreparedStatement stmt = conn.prepareStatement(sql);
+                    stmt.setString(1, password);
+                    stmt.setString(2, username);
+                    stmt.executeUpdate();
+                    this.userList = getUsers();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public void updateEmail(String username, String email) {
+        for (User user : userList) {
+            if (user.getUsername().equals(username)) {
+                try {
+                    String sql = "UPDATE users SET email = ? WHERE username = ?";
+                    PreparedStatement stmt = conn.prepareStatement(sql);
+                    stmt.setString(1, email);
+                    stmt.setString(2, username);
+                    stmt.executeUpdate();
+                    this.userList = getUsers();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+    public void updatePhone(String username, String phone) {
+        for (User user : userList) {
+            if (user.getUsername().equals(username)) {
+                try {
+                    String sql = "UPDATE users SET phone = ? WHERE username = ?";
+                    PreparedStatement stmt = conn.prepareStatement(sql);
+                    stmt.setString(1, phone);
+                    stmt.setString(2, username);
+                    stmt.executeUpdate();
+                    this.userList = getUsers();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 }
