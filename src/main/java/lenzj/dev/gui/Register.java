@@ -54,6 +54,13 @@ public class Register {
 
                 // show login panel
                 session.setActivePanel(session.getLogin().getParentPanel());
+
+                // clear fields
+                usernameField.setText("");
+                phoneField.setText("");
+                emailField.setText("");
+                passwordField.setText("");
+                confirmPasswordField.setText("");
             }
         });
 
@@ -179,5 +186,9 @@ public class Register {
 
     public JTextField getUsernameField() {
         return usernameField;
+    }
+
+    public JPasswordField getConfirmPasswordField() {
+        return confirmPasswordField;
     }
 }

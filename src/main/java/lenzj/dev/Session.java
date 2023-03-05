@@ -1,12 +1,15 @@
 package lenzj.dev;
 
+import lenzj.dev.database.ReservationDatabase;
 import lenzj.dev.gui.Home;
 import lenzj.dev.gui.Login;
 import lenzj.dev.gui.Register;
+import lenzj.dev.gui.reservationpages.Reservation;
 import lenzj.dev.gui.forgotpages.ChangePassword;
 import lenzj.dev.gui.forgotpages.ForgotPassword;
 import lenzj.dev.gui.forgotpages.ForgotUsername;
 import lenzj.dev.gui.forgotpages.UserVerification;
+import lenzj.dev.gui.reservationpages.Table;
 import lenzj.dev.objects.User;
 import lenzj.dev.database.UserDatabase;
 
@@ -19,6 +22,8 @@ public class Session {
     public Login login = new Login(this);
     public Register register = new Register(this);
     public Home home = new Home(this);
+    public Reservation reservation = new Reservation(this);
+    public Table table = new Table(this);
     public ForgotPassword forgotPassword = new ForgotPassword(this);
     public ForgotUsername forgotUsername = new ForgotUsername(this);
     public UserVerification userVerification = new UserVerification(this);
@@ -26,14 +31,15 @@ public class Session {
     public JFrame frame = new JFrame();
     public User user;
     public UserDatabase database = new UserDatabase();
-    public Session() {
+    public ReservationDatabase reservationDatabase = new ReservationDatabase();
+    public GraphicsEnvironment graphics = GraphicsEnvironment.getLocalGraphicsEnvironment();
+    public GraphicsDevice device = graphics.getDefaultScreenDevice();
 
+    public Session() {
         frame.setContentPane(login.getParentPanel());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
-        GraphicsEnvironment graphics = GraphicsEnvironment.getLocalGraphicsEnvironment();
-        GraphicsDevice device = graphics.getDefaultScreenDevice();
-        device.setFullScreenWindow(frame);
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setVisible(true);
 
         setActivePanel(login.getParentPanel());
@@ -91,5 +97,25 @@ public class Session {
 
     public ChangePassword getChangePassword() {
         return changePassword;
+    }
+
+    public Reservation getReservation() {
+        return reservation;
+    }
+
+    public GraphicsEnvironment getGraphics() {
+        return graphics;
+    }
+
+    public GraphicsDevice getDevice() {
+        return device;
+    }
+
+    public Table getTable() {
+        return table;
+    }
+
+    public ReservationDatabase getReservationDatabase() {
+        return reservationDatabase;
     }
 }

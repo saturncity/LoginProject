@@ -10,8 +10,7 @@ public class UserDatabase {
     private static final String DB_URL = "jdbc:mysql://localhost/loginsystem";
     private static final String DB_USER = "root";
     private static final String DB_PASS = "";
-    List<User> userList;
-
+    private List<User> userList;
     private Connection conn;
 
     public UserDatabase() {

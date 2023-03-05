@@ -47,6 +47,9 @@ public class Login {
 
                     // show home panel using the session's method
                     session.setActivePanel(session.getHome().getParentPanel());
+
+                    // clear passwords
+                    passwordField.setText("");
                 } else {
                     // show correct error message using JOptionPane
                     // first, check if fields are filled out
