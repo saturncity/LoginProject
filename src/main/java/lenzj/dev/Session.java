@@ -40,9 +40,14 @@ public class Session {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        frame.setTitle("LenzOS");
         frame.setVisible(true);
 
         setActivePanel(login.getParentPanel());
+
+//        database.purgeAllUsers();
+//        reservationDatabase.purgeReservations();
+
         database.debugPrint();
         reservationDatabase.debugPrint();
     }

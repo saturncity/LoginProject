@@ -77,7 +77,25 @@ public class UserDatabase {
 
     public User getUser(String username) {
         for (User user : userList) {
-            if (user.getUsername().equals(username)) {
+            if (user.getUsername().equals(username.toLowerCase())) {
+                return user;
+            }
+        }
+        return null;
+    }
+
+    public User getUserByEmail(String email) {
+        for (User user : userList) {
+            if (user.getEmail().equals(email.toLowerCase())) {
+                return user;
+            }
+        }
+        return null;
+    }
+
+    public User getUserByPhone(String phone) {
+        for (User user : userList) {
+            if (user.getPhone().equals(phone)) {
                 return user;
             }
         }
@@ -190,6 +208,17 @@ public class UserDatabase {
                 " ╚═════╝ ╚══════╝╚══════╝╚═╝  ╚═╝╚══════╝");
         for (User user : userList) {
             System.out.println("USERNAME: " + user.getUsername() + " | EMAIL: " + user.getEmail() + " | PHONE: " + user.getPhone() + " | PASSWORD: " + user.getPassword());
+        }
+    }
+
+    public void purgeAllUsers() {
+        try {
+            String sql = "DELETE FROM users";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.executeUpdate();
+            this.userList = getUsers();
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 

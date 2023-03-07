@@ -103,21 +103,19 @@ public class Table {
                 String date = dateDynamicLabel.getText();
                 String table = tableDynamicLabel.getText();
 
-                if (name.equals("") || phone.equals("") || date.equals("No date selected") || table.equals("No table selected")) {
+                if (name.equals("") || phone.equals("") || date.equals("No date selected.") || table.equals("No table selected.")) {
                     errorLabel.setText("Please fill out all fields.");
                 } else {
                     ReservationEvent reservation = new ReservationEvent(name, phone, date, table);
                     session.getReservationDatabase().addReservation(reservation);
 
                     // clear fields in both panels
-                    nameField.setText("");
-                    phoneField.setText("");
 
-                    session.getReservation().getNameField().setText("");
-                    session.getReservation().getPhoneField().setText("");
+                    session.getReservation().getNameField().setText(session.getUser().getUsername());
+                    session.getReservation().getPhoneField().setText(session.getUser().getPhone());
 
-                    dateDynamicLabel.setText("No date selected");
-                    tableDynamicLabel.setText("No table selected");
+                    dateDynamicLabel.setText("No date selected.");
+                    tableDynamicLabel.setText("No table selected.");
 
                     session.getReservation().getDateChooser().setDate(null);
 
@@ -138,7 +136,7 @@ public class Table {
         dateDynamicLabel.setText("No date selected");
 
         tableDynamicLabel = new JLabel();
-        tableDynamicLabel.setText("No table selected");
+        tableDynamicLabel.setText("No table selected.");
 
         errorLabel = new JLabel();
         errorLabel.setText(" ");

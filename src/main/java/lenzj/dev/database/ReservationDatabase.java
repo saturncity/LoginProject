@@ -91,4 +91,15 @@ public class ReservationDatabase {
         }
         return null;
     }
+
+    public void purgeReservations() {
+        try {
+            String sql = "DELETE FROM reservations";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            stmt.executeUpdate();
+            this.reservationList = getReservations();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

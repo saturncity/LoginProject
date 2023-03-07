@@ -25,12 +25,15 @@ public class ForgotUsername {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (fieldField.getText().equals("")) {
-                    errorLabel.setText("Please fill out all fields.");
-                } else if (session.getDatabase().getUser(fieldField.getText()) != null) {
-                    session.getLogin().getUsernameField().setText(session.getDatabase().getUser(fieldField.getText()).getUsername());
-                    errorLabel.setText("Your username is " + session.getDatabase().getUser(fieldField.getText()).getUsername());
+                    errorLabel.setText("Please fill out the field.");
+                } else if (session.getDatabase().getUserByEmail(fieldField.getText()) != null) {
+                    session.getLogin().getUsernameField().setText(session.getDatabase().getUserByEmail(fieldField.getText()).getUsername());
+                    errorLabel.setText("Your username is " + session.getDatabase().getUserByEmail(fieldField.getText()).getUsername());
+                } else if (session.getDatabase().getUserByPhone(fieldField.getText()) != null) {
+                    session.getLogin().getUsernameField().setText(session.getDatabase().getUserByPhone(fieldField.getText()).getUsername());
+                    errorLabel.setText("Your username is " + session.getDatabase().getUserByPhone(fieldField.getText()).getUsername());
                 } else {
-                    errorLabel.setText("No user is found with credentials: " + fieldLabel.getText().toLowerCase());
+                    errorLabel.setText("User does not exist.");
                 }
             }
         });

@@ -4,12 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3edbcfad-d0da-48cc-899d-772a16d9e686" name="Changes" comment="fucking finished the project">
+    <list default="true" id="3edbcfad-d0da-48cc-899d-772a16d9e686" name="Changes" comment="finishing touches">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/Session.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/database/ReservationDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/database/ReservationDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/database/UserDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/database/UserDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/LoginPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/LoginPage.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/Register.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/Register.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/RegisterPage.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/RegisterPage.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/forgotpages/ForgotUsername.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/forgotpages/ForgotUsername.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/forgotpages/UserVerification.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/forgotpages/UserVerification.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/forgotpages/UserVerification.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/forgotpages/UserVerification.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/reservationpages/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/reservationpages/Reservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/reservationpages/Table.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/reservationpages/Table.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/reservationpages/Table.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/reservationpages/Table.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,25 +47,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/lenzj/dev/gui/reservationpages/tables" />
@@ -104,7 +112,8 @@
       <workItem from="1677721164874" duration="10350000" />
       <workItem from="1677798453771" duration="1997000" />
       <workItem from="1677822633362" duration="882000" />
-      <workItem from="1677981656935" duration="24238000" />
+      <workItem from="1677981656935" duration="29605000" />
+      <workItem from="1678158873557" duration="2025000" />
     </task>
     <task id="LOCAL-00001" summary="Initial Commit&#10;- Register Setup&#10;- Basic Page Navigation&#10;- User Setup&#10;- Login, Register Page Setups">
       <created>1677553539083</created>
@@ -155,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678036542387</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="finishing touches">
+      <created>1678056602208</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1678056602208</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,6 +197,7 @@
     <MESSAGE value="More significant reformatting + new classes" />
     <MESSAGE value="Forgot system" />
     <MESSAGE value="fucking finished the project" />
-    <option name="LAST_COMMIT_MESSAGE" value="fucking finished the project" />
+    <MESSAGE value="finishing touches" />
+    <option name="LAST_COMMIT_MESSAGE" value="finishing touches" />
   </component>
 </project>

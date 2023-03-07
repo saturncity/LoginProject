@@ -3,11 +3,9 @@ package lenzj.dev.gui.reservationpages;
 import com.toedter.calendar.JDateChooser;
 import lenzj.dev.Session;
 
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.time.LocalDateTime;
 
 public class Reservation {
     public Reservation(Session session) {
@@ -75,10 +73,11 @@ public class Reservation {
 
 
                     if (!austinAvailability && !kowloonAvailability && !pekingAvailability && !modyAvailability) {
-                        session.getTable().getErrorLabel().setText("All tables are taken for this date.");
+                        errorLabel.setText("All tables are taken for this date.");
                     } else {
-                        session.getTable().getErrorLabel().setText(" ");
                         session.setActivePanel(session.getTable().getParentPanel());
+                        errorLabel.setText(" ");
+                        session.getTable().getTableDynamicLabel().setText("No table selected.");
                     }
                 }
             }

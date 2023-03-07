@@ -25,8 +25,6 @@ public class Register {
     private JLabel confirmPasswordLabel;
     private JLabel creationConditionsLabel;
     private JLabel emailLabel;
-    private JLabel footerLabel;
-    private JLabel headerLabel;
     private JLabel passwordLabel;
     private JLabel phoneLabel;
     private JLabel usernameLabel;
@@ -108,10 +106,19 @@ public class Register {
                 String password = new String(passwordField.getPassword());
 
                 // create user
-                session.getDatabase().addUser(new User(username, email, phone, password));
+                User user = new User(username, email, phone, password);
+                session.getDatabase().addUser(user);
+                session.setUser(user);
 
                 // show home panel
                 session.setActivePanel(session.getHome().getParentPanel());
+
+                // clear fields
+                usernameField.setText("");
+                phoneField.setText("");
+                emailField.setText("");
+                passwordField.setText("");
+                confirmPasswordField.setText("");
             }
         });
     }

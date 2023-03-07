@@ -25,6 +25,7 @@ public class UserVerification {
     private JLabel codeLabel;
     private JTextPane phoneTextPane;
     private JLabel errorLabel;
+    private JButton goBackButton;
 
     public UserVerification(Session session) {
 
@@ -50,6 +51,12 @@ public class UserVerification {
                 } else {
                     codeLabel.setText("Code is incorrect.");
                 }
+            }
+        });
+        goBackButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                session.setActivePanel(session.getForgotPassword().getParentPanel());
             }
         });
     }

@@ -15,7 +15,6 @@ public class Login {
     private JTextField usernameField;
     private JButton logInButton;
     private JButton registerButton;
-    private JLabel headerLabel;
     private JLabel passwordLabel;
     private JLabel usernameLabel;
     private JPanel buttonPanel;
